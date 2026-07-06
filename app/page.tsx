@@ -4,6 +4,8 @@ import Categories from "@/components/sections/Categories";
 import WhyChoose from "@/components/sections/WhyChoose";
 import TrustStats from "@/components/sections/TrustStats";
 import FeaturedAITools from "@/components/sections/FeaturedAITools";
+import FAQ from "@/components/sections/FAQ";
+import CTA from "@/components/sections/CTA";
 
 export default function Home() {
   return (
@@ -17,7 +19,9 @@ export default function Home() {
 
 <FeaturedAITools />
 
-{/* FAQ */}
+<FAQ />
+
+<CTA />
     </>
   );
 }
