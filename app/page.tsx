@@ -1,15 +1,13 @@
-import Navbar from "@/components/layout/navbar";
+import Hero from "@/components/sections/hero";
+import PopularTools from "@/components/sections/PopularTools";
+import Categories from "@/components/sections/Categories";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
-
-      <main className="flex min-h-screen items-center justify-center">
-        <h1 className="font-heading text-5xl font-bold">
-          ToolNovaAI 🚀
-        </h1>
-      </main>
+      <Hero />
+      <PopularTools />
+      <Categories />
     </>
   );
 }
