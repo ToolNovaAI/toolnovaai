@@ -7,6 +7,9 @@ interface WordCounterStatsProps {
   sentences: number;
   paragraphs: number;
   readingTime: number;
+  speakingTime: number;
+  averageWordLength: number;
+  longestWord: string;
 }
 
 export default function WordCounterStats({
@@ -16,6 +19,9 @@ export default function WordCounterStats({
   sentences,
   paragraphs,
   readingTime,
+  speakingTime,
+  averageWordLength,
+  longestWord,
 }: WordCounterStatsProps) {
   return (
     <ToolStats
@@ -43,6 +49,18 @@ export default function WordCounterStats({
         {
           label: "Reading Time",
           value: `${readingTime} min`,
+        },
+        {
+          label: "Speaking Time",
+          value: `${speakingTime} min`,
+        },
+        {
+          label: "Average Word Length",
+          value: averageWordLength,
+        },
+        {
+          label: "Longest Word",
+          value: longestWord || "-",
         },
       ]}
     />

@@ -10,16 +10,19 @@ import { useWordCounter } from "@/components/tool/word-counter/useWordCounter";
 
 export default function WordCounterPage() {
   const {
-    text,
-    setText,
-    clear,
-    words,
-    characters,
-    charactersNoSpaces,
-    sentences,
-    paragraphs,
-    readingTime,
-  } = useWordCounter();
+  text,
+  setText,
+  clear,
+  words,
+  characters,
+  charactersNoSpaces,
+  sentences,
+  paragraphs,
+  readingTime,
+  speakingTime,
+  averageWordLength,
+  longestWord,
+} = useWordCounter();
 
   return (
     <main className="mx-auto max-w-7xl px-6 py-12">
@@ -32,24 +35,27 @@ export default function WordCounterPage() {
             badge="FREE"
           />
         }
-        main={
-          <div className="space-y-8">
-            <WordCounterInput
-              text={text}
-              onChange={setText}
-              onClear={clear}
-            />
+       main={
+  <div className="space-y-8">
+    <WordCounterInput
+      text={text}
+      onChange={setText}
+      onClear={clear}
+    />
 
-            <WordCounterStats
-              words={words}
-              characters={characters}
-              charactersNoSpaces={charactersNoSpaces}
-              sentences={sentences}
-              paragraphs={paragraphs}
-              readingTime={readingTime}
-            />
-          </div>
-        }
+    <WordCounterStats
+      words={words}
+      characters={characters}
+      charactersNoSpaces={charactersNoSpaces}
+      sentences={sentences}
+      paragraphs={paragraphs}
+      readingTime={readingTime}
+      speakingTime={speakingTime}
+      averageWordLength={averageWordLength}
+      longestWord={longestWord}
+    />
+  </div>
+}
         sidebar={
           <ToolSidebar
             items={[

@@ -48,3 +48,39 @@ export function calculateReadingTime(words: number): number {
 
   return Math.ceil(words / 200);
 }
+/**
+ * Calculate estimated speaking time (130 words/minute).
+ */
+export function calculateSpeakingTime(words: number): number {
+  if (words === 0) return 0;
+
+  return Math.ceil(words / 130);
+}
+/**
+ * Calculate average word length.
+ */
+export function calculateAverageWordLength(text: string): number {
+  const words = text.trim().split(/\s+/).filter(Boolean);
+
+  if (words.length === 0) return 0;
+
+  const totalCharacters = words.reduce(
+    (sum, word) => sum + word.length,
+    0
+  );
+
+  return Number((totalCharacters / words.length).toFixed(1));
+}
+
+/**
+ * Find the longest word.
+ */
+export function findLongestWord(text: string): string {
+  const words = text.trim().split(/\s+/).filter(Boolean);
+
+  if (words.length === 0) return "";
+
+  return words.reduce((longest, current) =>
+    current.length > longest.length ? current : longest
+  );
+}

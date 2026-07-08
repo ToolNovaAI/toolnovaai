@@ -1,6 +1,7 @@
 "use client";
 
 import ToolActions from "../ToolActions";
+import { useClipboard } from "@/hooks/useClipboard";
 
 interface WordCounterInputProps {
   text: string;
@@ -13,10 +14,10 @@ export default function WordCounterInput({
   onChange,
   onClear,
 }: WordCounterInputProps) {
-  async function handleCopy() {
-    if (!text.trim()) return;
+  const { copied, copy } = useClipboard();
 
-    await navigator.clipboard.writeText(text);
+  async function handleCopy() {
+    await copy(text);
   }
 
   return (
@@ -25,6 +26,7 @@ export default function WordCounterInput({
         value={text}
         onChange={(e) => onChange(e.target.value)}
         placeholder="Start typing or paste your text here..."
+        aria-label="Text input"
         className="
           min-h-[320px]
           w-full
@@ -51,15 +53,15 @@ export default function WordCounterInput({
       <ToolActions
         actions={[
           {
-            label: "Copy",
+            label: copied ? "Copied ✓" : "Copy",
             onClick: handleCopy,
-            disabled: text.length === 0,
+            disabled: text.trim().length === 0,
           },
           {
             label: "Clear",
             onClick: onClear,
             variant: "danger",
-            disabled: text.length === 0,
+            disabled: text.trim().length === 0,
           },
         ]}
       />
