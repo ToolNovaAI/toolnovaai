@@ -6,7 +6,6 @@ import TrustStats from "@/components/sections/TrustStats";
 import FeaturedAITools from "@/components/sections/FeaturedAITools";
 import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/sections/CTA";
-import Footer from "@/components/sections/Footer";
 
 export default function Home() {
   return (
@@ -15,16 +14,10 @@ export default function Home() {
       <PopularTools />
       <Categories />
       <WhyChoose />
-
-<TrustStats />
-
-<FeaturedAITools />
-
-<FAQ />
-
-<CTA />
-
-<Footer />
+      <TrustStats />
+      <FeaturedAITools />
+      <FAQ />
+      <CTA />
     </>
   );
 }

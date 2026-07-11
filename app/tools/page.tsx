@@ -1,5 +1,4 @@
 import CTA from "@/components/sections/CTA";
-import Footer from "@/components/sections/Footer";
 import ToolsDirectory from "@/components/sections/ToolsDirectory";
 import Container from "@/components/ui/container";
 
@@ -34,9 +33,6 @@ export default function ToolsPage() {
 
       {/* CTA */}
       <CTA />
-
-      {/* Footer */}
-      <Footer />
     </>
   );
 }
