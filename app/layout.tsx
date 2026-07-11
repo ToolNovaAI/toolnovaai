@@ -44,10 +44,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}
-    >
+   <html
+  lang="en"
+  data-scroll-behavior="smooth"
+  className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}
+>
       <body className="min-h-screen bg-[#050816] text-white">
         <Navbar />
         <main>{children}</main>
