@@ -1,0 +1,113 @@
+.
+├── .DS_Store
+├── .gitignore
+├── AGENTS.md
+├── CLAUDE.md
+├── LICENSE
+├── PROJECT_TREE.txt
+├── README.md
+├── app
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── tools
+│       ├── character-counter
+│       │   └── page.tsx
+│       ├── page.tsx
+│       └── word-counter
+│           └── page.tsx
+├── components
+│   ├── components
+│   │   └── tool
+│   │       └── text-to-slug
+│   │           └── useTextToSlug.ts
+│   ├── icons
+│   ├── layout
+│   │   └── navbar.tsx
+│   ├── sections
+│   │   ├── CTA.tsx
+│   │   ├── Categories.tsx
+│   │   ├── FAQ.tsx
+│   │   ├── FeaturedAITools.tsx
+│   │   ├── Footer.tsx
+│   │   ├── PopularTools.tsx
+│   │   ├── ToolsDirectory.tsx
+│   │   ├── TrustStats.tsx
+│   │   ├── WhyChoose.tsx
+│   │   └── hero.tsx
+│   ├── text-to-slug
+│   │   └── page.tsx
+│   ├── tool
+│   │   ├── TextInput.tsx
+│   │   ├── ToolActions.tsx
+│   │   ├── ToolHero.tsx
+│   │   ├── ToolLayout.tsx
+│   │   ├── ToolOutput.tsx
+│   │   ├── ToolSidebar.tsx
+│   │   ├── ToolStats.tsx
+│   │   ├── character-counter
+│   │   │   ├── CharacterCounterStats.tsx
+│   │   │   └── useCharacterCounter.ts
+│   │   ├── text-to-slug
+│   │   │   └── TextToSlugStats.tsx
+│   │   └── word-counter
+│   │       ├── WordCounterInput.tsx
+│   │       ├── WordCounterStats.tsx
+│   │       └── useWordCounter.ts
+│   └── ui
+│       ├── AIToolCard.tsx
+│       ├── CategoryCard.tsx
+│       ├── CategoryFilter.tsx
+│       ├── FAQItem.tsx
+│       ├── FeatureCard.tsx
+│       ├── FooterColumn.tsx
+│       ├── SectionHeading.tsx
+│       ├── StatCard.tsx
+│       ├── ToolCard.tsx
+│       ├── ToolDirectoryCard.tsx
+│       ├── ToolSearch.tsx
+│       ├── button.tsx
+│       └── container.tsx
+├── config
+├── constants
+│   ├── aiTools.ts
+│   ├── allTools.ts
+│   ├── categories.ts
+│   ├── faqs.ts
+│   ├── features.ts
+│   ├── footer.ts
+│   ├── sections
+│   ├── stats.ts
+│   ├── tools.ts
+│   └── ui
+├── docs
+│   ├── .DS_Store
+│   ├── ARCHITECTURE.md
+│   ├── CHANGELOG.md
+│   ├── PROJECT.md
+│   ├── ROADMAP.md
+│   └── STYLEGUIDE.md
+├── eslint.config.mjs
+├── hooks
+│   └── useClipboard.ts
+├── lib
+│   └── text.ts
+├── next-env.d.ts
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── public
+│   ├── .DS_Store
+│   ├── favicon
+│   ├── icons
+│   └── images
+├── styles
+├── tsconfig.json
+├── types
+│   ├── tool.ts
+│   └── types
+└── utils
+
+33 directories, 78 files

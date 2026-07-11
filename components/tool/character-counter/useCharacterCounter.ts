@@ -1,3 +1,5 @@
+"use client";
+
 import { useMemo, useState } from "react";
 
 import {
@@ -5,9 +7,11 @@ import {
   calculateSpeakingTime,
   countCharacters,
   countCharactersWithoutSpaces,
+  countLines,
   countParagraphs,
   countSentences,
   countWords,
+  estimateTokens,
 } from "@/lib/text";
 
 export function useCharacterCounter() {
@@ -20,10 +24,12 @@ export function useCharacterCounter() {
       words,
       characters: countCharacters(text),
       charactersNoSpaces: countCharactersWithoutSpaces(text),
+      lines: countLines(text),
       sentences: countSentences(text),
       paragraphs: countParagraphs(text),
       readingTime: calculateReadingTime(words),
       speakingTime: calculateSpeakingTime(words),
+      tokens: estimateTokens(text),
     };
   }, [text]);
 

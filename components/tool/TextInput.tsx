@@ -1,0 +1,74 @@
+"use client";
+
+import ToolActions from "./ToolActions";
+import { useClipboard } from "@/hooks/useClipboard";
+
+interface TextInputProps {
+  text: string;
+  onChange: (value: string) => void;
+  onClear: () => void;
+  placeholder?: string;
+  minHeight?: string;
+}
+
+export default function TextInput({
+  text,
+  onChange,
+  onClear,
+  placeholder = "Start typing or paste your text here...",
+  minHeight = "min-h-[320px]",
+}: TextInputProps) {
+  const { copied, copy } = useClipboard();
+
+  async function handleCopy() {
+    await copy(text);
+  }
+
+  return (
+    <div className="space-y-6">
+      <textarea
+        value={text}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
+        aria-label="Text input"
+        className={`
+          ${minHeight}
+          w-full
+          resize-y
+          rounded-3xl
+          border
+          border-white/10
+          bg-white/5
+          p-6
+          text-base
+          leading-7
+          text-white
+          placeholder:text-zinc-500
+          backdrop-blur-xl
+          outline-none
+          transition-all
+          duration-300
+          focus:border-cyan-500/40
+          focus:ring-2
+          focus:ring-cyan-500/20
+        `}
+      />
+
+      <ToolActions
+        actions={[
+          {
+            label: copied ? "Copied ✓" : "Copy",
+            onClick: handleCopy,
+            disabled: text.trim().length === 0,
+          },
+          {
+            label: "Clear",
+            onClick: onClear,
+            variant: "danger",
+            disabled: text.trim().length === 0,
+          },
+        ]}
+      />
+    </div>
+  );
+}

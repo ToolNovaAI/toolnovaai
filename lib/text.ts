@@ -1,4 +1,14 @@
 /**
+ * Average reading speed (words per minute).
+ */
+const READING_WPM = 200;
+
+/**
+ * Average speaking speed (words per minute).
+ */
+const SPEAKING_WPM = 130;
+
+/**
  * Count words in a string.
  */
 export function countWords(text: string): number {
@@ -24,38 +34,66 @@ export function countCharactersWithoutSpaces(text: string): number {
 }
 
 /**
+ * Count lines.
+ */
+export function countLines(text: string): number {
+  if (!text) return 0;
+
+  return text.split("\n").length;
+}
+
+/**
  * Count sentences.
  */
 export function countSentences(text: string): number {
-  const matches = text.match(/[.!?]+/g);
-  return matches ? matches.length : 0;
+  if (!text.trim()) return 0;
+
+  return text
+    .split(/[.!?]+/)
+    .map((sentence) => sentence.trim())
+    .filter(Boolean).length;
 }
 
 /**
  * Count paragraphs.
  */
 export function countParagraphs(text: string): number {
+  if (!text.trim()) return 0;
+
   return text
-    .split(/\n+/)
+    .split(/\n\s*\n/)
     .filter((paragraph) => paragraph.trim().length > 0).length;
 }
 
 /**
- * Calculate estimated reading time (200 words/minute).
+ * Calculate estimated reading time.
  */
 export function calculateReadingTime(words: number): number {
   if (words === 0) return 0;
 
-  return Math.ceil(words / 200);
+  return Math.ceil(words / READING_WPM);
 }
+
 /**
- * Calculate estimated speaking time (130 words/minute).
+ * Calculate estimated speaking time.
  */
 export function calculateSpeakingTime(words: number): number {
   if (words === 0) return 0;
 
-  return Math.ceil(words / 130);
+  return Math.ceil(words / SPEAKING_WPM);
 }
+
+/**
+ * Estimate AI tokens.
+ * Approximation:
+ * 1 token ≈ 4 characters.
+ */
+export function estimateTokens(text: string): number {
+  if (!text) return 0;
+
+  return Math.ceil(text.length / 4);
+}
+
 /**
  * Calculate average word length.
  */
@@ -83,4 +121,23 @@ export function findLongestWord(text: string): string {
   return words.reduce((longest, current) =>
     current.length > longest.length ? current : longest
   );
+}
+
+/**
+ * Check whether text is empty after trimming.
+ */
+export function isTextEmpty(text: string): boolean {
+  return text.trim().length === 0;
+}
+
+/**
+ * Truncate text to a maximum length.
+ */
+export function truncateText(
+  text: string,
+  maxLength: number
+): string {
+  if (text.length <= maxLength) return text;
+
+  return text.slice(0, maxLength).trimEnd() + "...";
 }
