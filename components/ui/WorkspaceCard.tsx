@@ -1,24 +1,51 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, LucideIcon } from "lucide-react";
+import {
+  ArrowRight,
+  Bot,
+  Search,
+  Sparkles,
+  Share2,
+  Code2,
+  Type,
+  Image,
+  FileText,
+  MessageCircle,
+} from "lucide-react";
+
 import GlassCard from "./GlassCard";
 
 interface WorkspaceCardProps {
   title: string;
   description: string;
   href: string;
-  icon: LucideIcon;
+  icon: string;
   tools: number;
 }
+
+const icons = {
+  bot: Bot,
+  search: Search,
+  sparkles: Sparkles,
+  share2: Share2,
+  code2: Code2,
+  type: Type,
+  image: Image,
+  "file-text": FileText,
+  "message-circle": MessageCircle,
+};
 
 export default function WorkspaceCard({
   title,
   description,
   href,
-  icon: Icon,
+  icon,
   tools,
 }: WorkspaceCardProps) {
+  const Icon =
+    icons[icon as keyof typeof icons] ?? Bot;
+
   return (
     <Link href={href}>
       <GlassCard
@@ -30,7 +57,7 @@ export default function WorkspaceCard({
             <Icon size={28} />
           </div>
 
-          <ArrowRight className="text-zinc-500 transition group-hover:translate-x-1 group-hover:text-cyan-400" />
+          <ArrowRight className="text-zinc-500 transition duration-300 group-hover:translate-x-1 group-hover:text-cyan-400" />
         </div>
 
         <h3 className="mt-6 text-xl font-bold text-white">
