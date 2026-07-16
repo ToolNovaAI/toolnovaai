@@ -1,6 +1,6 @@
 import HeroBanner from "@/components/dashboard/HeroBanner";
 import DashboardStats from "@/components/dashboard/DashboardStats";
-import WorkspaceModules from "@/components/dashboard/WorkspaceModules";
+import DashboardGrid from "@/components/dashboard/DashboardGrid";
 
 import Sidebar from "@/components/layout/Sidebar";
 import Topbar from "@/components/layout/Topbar";
@@ -19,8 +19,8 @@ export default function DashboardPage() {
         {/* Dashboard Stats */}
         <DashboardStats />
 
-        {/* Workspace Modules */}
-        <WorkspaceModules />
+        {/* Dashboard OS */}
+        <DashboardGrid />
       </div>
     </WorkspaceLayout>
   );
