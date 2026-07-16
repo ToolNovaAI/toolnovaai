@@ -15,6 +15,7 @@ export default function Navbar() {
             <h1 className="font-heading text-lg font-bold text-white">
               ToolNovaAI
             </h1>
+
             <p className="text-xs text-gray-400">
               AI • SEO • Developer Tools
             </p>
@@ -23,28 +24,51 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 md:flex">
-          <Link href="/" className="text-sm text-gray-300 hover:text-white">
+          <Link
+            href="/"
+            className="text-sm text-gray-300 transition hover:text-white"
+          >
             Home
           </Link>
 
-          <Link href="/tools" className="text-sm text-gray-300 hover:text-white">
+          <Link
+            href="/tools"
+            className="text-sm text-gray-300 transition hover:text-white"
+          >
             Tools
           </Link>
 
-          <Link href="/blog" className="text-sm text-gray-300 hover:text-white">
+          {/* NEW */}
+          <Link
+            href="/dashboard"
+            className="text-sm font-medium text-cyan-400 transition hover:text-cyan-300"
+          >
+            Workspace
+          </Link>
+
+          <Link
+            href="/blog"
+            className="text-sm text-gray-300 transition hover:text-white"
+          >
             Blog
           </Link>
 
-          <Link href="/about" className="text-sm text-gray-300 hover:text-white">
+          <Link
+            href="/about"
+            className="text-sm text-gray-300 transition hover:text-white"
+          >
             About
           </Link>
         </nav>
 
         {/* Right Side */}
         <div className="flex items-center gap-3">
-          <button className="rounded-xl bg-primary px-5 py-2 text-sm font-semibold text-white transition hover:opacity-90">
-            Get Started
-          </button>
+          <Link
+            href="/dashboard"
+            className="rounded-xl bg-primary px-5 py-2 text-sm font-semibold text-white transition hover:opacity-90"
+          >
+            Open Workspace
+          </Link>
         </div>
       </Container>
     </header>

@@ -15,78 +15,159 @@ export default function Hero() {
         <div className="grid items-center gap-20 lg:grid-cols-2">
           {/* Left */}
           <div className="mx-auto max-w-xl text-center lg:mx-0 lg:max-w-none lg:text-left">
-            <span className="inline-flex rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm text-blue-400">
-              🚀 100% Free AI & SEO Tools
+            <span className="inline-flex rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-400">
+              🚀 AI Workspace OS • 100% Free Tools
             </span>
 
-            <h1 className="mt-8 max-w-[650px] text-5xl font-bold leading-[1.05] tracking-tight text-white md:text-7xl xl:text-8xl">
-              Build Better Websites
+            <h1 className="mt-8 max-w-[700px] text-5xl font-bold leading-[1.05] tracking-tight text-white md:text-7xl xl:text-8xl">
+              Build.
               <br />
-              with Powerful{" "}
+              Optimize.
+              <br />
               <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                AI Tools
+                Grow.
               </span>
             </h1>
 
             <p className="mt-8 max-w-2xl text-lg leading-8 text-gray-400">
-              ToolNovaAI provides fast, modern and free AI, SEO and Developer
-              tools to help creators, bloggers and businesses grow online.
+              The all-in-one AI Workspace for SEO, GEO, AEO, Developers and
+              Content Creators. Build faster, optimize smarter and launch with
+              confidence using powerful free tools.
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
-              <Button href="/tools">Explore Tools</Button>
+              <Button href="/dashboard">
+                Open Workspace
+              </Button>
 
-              <Button href="/blog" variant="secondary">
-                Read Blog
+              <Button
+                href="/tools"
+                variant="secondary"
+              >
+                Explore Tools
               </Button>
             </div>
 
+            {/* Stats */}
             <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-blue-500/40 hover:bg-white/10">
-                <h2 className="text-3xl font-bold text-white">25+</h2>
-                <p className="mt-2 text-gray-400">Free Tools</p>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-cyan-500/40 hover:bg-white/10">
+                <h2 className="text-3xl font-bold text-white">
+                  120+
+                </h2>
+
+                <p className="mt-2 text-gray-400">
+                  Free Tools
+                </p>
               </div>
 
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-blue-500/40 hover:bg-white/10">
-                <h2 className="text-3xl font-bold text-white">100%</h2>
-                <p className="mt-2 text-gray-400">Free Forever</p>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-cyan-500/40 hover:bg-white/10">
+                <h2 className="text-3xl font-bold text-white">
+                  8
+                </h2>
+
+                <p className="mt-2 text-gray-400">
+                  AI Workspaces
+                </p>
               </div>
 
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-blue-500/40 hover:bg-white/10">
-                <h2 className="text-3xl font-bold text-white">Fast</h2>
-                <p className="mt-2 text-gray-400">Lightning Speed</p>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-cyan-500/40 hover:bg-white/10">
+                <h2 className="text-3xl font-bold text-white">
+                  AI
+                </h2>
+
+                <p className="mt-2 text-gray-400">
+                  Powered
+                </p>
               </div>
             </div>
           </div>
 
           {/* Right */}
           <div className="hidden items-center justify-end lg:flex">
-            <div className="w-full max-w-lg rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl shadow-2xl">
+            <div className="w-full max-w-lg rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-xl">
               <div className="mb-6 flex items-center justify-between">
                 <h3 className="text-lg font-bold text-white">
-                  AI Dashboard
+                  ToolNovaAI Workspace
                 </h3>
 
-                <span className="rounded-full bg-green-500/20 px-3 py-1 text-xs text-green-400">
+                <span className="rounded-full bg-green-500/20 px-3 py-1 text-xs font-semibold text-green-400">
                   Online
                 </span>
               </div>
 
               <div className="space-y-4">
-                <div className="rounded-xl bg-white/5 p-4 transition hover:bg-blue-500/10">
-                  🤖 AI Content Detector
+                <div className="rounded-xl border border-white/10 bg-white/5 p-4 transition hover:border-cyan-500/30 hover:bg-cyan-500/10">
+                  🤖 AI Workspace
                 </div>
 
-                <div className="rounded-xl bg-white/5 p-4 transition hover:bg-blue-500/10">
-                  🔑 Keyword Research
+                <div className="rounded-xl border border-white/10 bg-white/5 p-4 transition hover:border-cyan-500/30 hover:bg-cyan-500/10">
+                  🔍 SEO Workspace
                 </div>
 
-                <div className="rounded-xl bg-white/5 p-4 transition hover:bg-blue-500/10">
-                  📈 SEO Analyzer
+                <div className="rounded-xl border border-white/10 bg-white/5 p-4 transition hover:border-cyan-500/30 hover:bg-cyan-500/10">
+                  💻 Developer Workspace
                 </div>
 
-                <div className="rounded-xl bg-white/5 p-4 transition hover:bg-blue-500/10">
-                  📄 Meta Generator
+                <div className="rounded-xl border border-white/10 bg-white/5 p-4 transition hover:border-cyan-500/30 hover:bg-cyan-500/10">
+                  📝 Text Workspace
+                </div>
+
+                <div className="mt-6 rounded-2xl border border-cyan-500/20 bg-cyan-500/10 p-5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-400">
+                      Workspace Health
+                    </span>
+
+                    <span className="font-bold text-cyan-400">
+                      99%
+                    </span>
+                  </div>
+
+                  <div className="mt-3 h-2 rounded-full bg-white/10">
+                    <div className="h-2 w-[99%] rounded-full bg-cyan-500" />
+                  </div>
+
+                  <div className="mt-5 grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <p className="text-gray-500">
+                        Active Tools
+                      </p>
+
+                      <p className="font-bold text-white">
+                        120+
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-gray-500">
+                        AI Suggestions
+                      </p>
+
+                      <p className="font-bold text-white">
+                        14
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-gray-500">
+                        SEO Score
+                      </p>
+
+                      <p className="font-bold text-green-400">
+                        92/100
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-gray-500">
+                        Projects
+                      </p>
+
+                      <p className="font-bold text-white">
+                        8
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
