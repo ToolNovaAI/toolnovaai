@@ -100,8 +100,9 @@ export default function AIPromptLibrary() {
             <Link
               key={prompt.title}
               href={prompt.href}
-              className="group rounded-2xl border border-white/10 bg-white/5 p-5 transition-all duration-300 hover:border-cyan-500/40 hover:bg-[#10192d]"
+              className="group flex h-full flex-col rounded-2xl border border-white/10 bg-white/5 p-5 transition-all duration-300 hover:border-cyan-500/40 hover:bg-[#10192d]"
             >
+              {/* Top */}
               <div className="flex items-center justify-between">
                 <div
                   className={`flex h-12 w-12 items-center justify-center rounded-xl ${prompt.bg}`}
@@ -115,17 +116,20 @@ export default function AIPromptLibrary() {
                 <ArrowUpRight className="text-zinc-500 transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-cyan-400" />
               </div>
 
-              <div className="mt-5 flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-white">
-                  {prompt.title}
-                </h3>
+              {/* Title */}
+              <h3 className="mt-6 min-h-[60px] text-xl font-semibold leading-8 text-white">
+                {prompt.title}
+              </h3>
 
-                <span className="rounded-full bg-cyan-500/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-cyan-300">
+              {/* Category */}
+              <div className="mt-3">
+                <span className="inline-flex rounded-full bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cyan-300">
                   {prompt.category}
                 </span>
               </div>
 
-              <p className="mt-3 text-sm leading-6 text-zinc-400">
+              {/* Description */}
+              <p className="mt-5 flex-1 text-sm leading-7 text-zinc-400">
                 {prompt.description}
               </p>
             </Link>

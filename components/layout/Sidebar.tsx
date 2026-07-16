@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
   Bot,
@@ -29,27 +30,27 @@ const sections = [
       },
       {
         label: "AI Workspace",
-        href: "/ai",
+        href: "/workspace/ai",
         icon: Bot,
       },
       {
         label: "SEO Workspace",
-        href: "/seo",
+        href: "/workspace/seo",
         icon: Search,
       },
       {
         label: "GEO Workspace",
-        href: "/geo",
+        href: "/workspace/geo",
         icon: Sparkles,
       },
       {
         label: "AEO Workspace",
-        href: "/aeo",
+        href: "/workspace/aeo",
         icon: Sparkles,
       },
       {
         label: "SMO Workspace",
-        href: "/smo",
+        href: "/workspace/smo",
         icon: Share2,
       },
     ],
@@ -59,27 +60,27 @@ const sections = [
     items: [
       {
         label: "Developer",
-        href: "/developer",
+        href: "/tools",
         icon: Code2,
       },
       {
         label: "Text Tools",
-        href: "/text",
+        href: "/tools",
         icon: Type,
       },
       {
         label: "Image Tools",
-        href: "/image",
+        href: "/tools",
         icon: Image,
       },
       {
         label: "PDF Tools",
-        href: "/pdf",
+        href: "/tools",
         icon: FileText,
       },
       {
         label: "Utilities",
-        href: "/utilities",
+        href: "/tools",
         icon: Wrench,
       },
     ],
@@ -107,6 +108,8 @@ const sections = [
 ];
 
 export default function Sidebar() {
+  const pathname = usePathname();
+
   return (
     <aside className="flex h-full flex-col bg-[#090D1F]">
       {/* Logo */}
@@ -121,7 +124,7 @@ export default function Sidebar() {
         </p>
       </div>
 
-      {/* Menu */}
+      {/* Navigation */}
       <div className="flex-1 overflow-y-auto px-4 py-6">
         {sections.map((section) => (
           <div
@@ -136,14 +139,30 @@ export default function Sidebar() {
               {section.items.map((item) => {
                 const Icon = item.icon;
 
+                const active =
+                  pathname === item.href ||
+                  pathname.startsWith(`${item.href}/`);
+
                 return (
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-zinc-300 transition-all duration-200 hover:bg-cyan-500/10 hover:text-cyan-300"
+                    className={`group flex items-center gap-3 rounded-xl border px-3 py-3 text-sm font-medium transition-all duration-200 ${
+                      active
+                        ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-300"
+                        : "border-transparent text-zinc-300 hover:border-cyan-500/20 hover:bg-cyan-500/5 hover:text-cyan-300"
+                    }`}
                   >
-                    <Icon size={18} />
-                    <span>{item.label}</span>
+                    <Icon
+                      size={18}
+                      className={`transition-transform duration-200 group-hover:scale-110 ${
+                        active ? "text-cyan-400" : ""
+                      }`}
+                    />
+
+                    <span className="flex-1">
+                      {item.label}
+                    </span>
                   </Link>
                 );
               })}
@@ -152,7 +171,7 @@ export default function Sidebar() {
         ))}
       </div>
 
-      {/* Upgrade Card */}
+      {/* Upgrade */}
       <div className="border-t border-white/10 p-4">
         <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/10 p-5">
           <div className="mb-3 flex items-center gap-2">
@@ -166,7 +185,7 @@ export default function Sidebar() {
             </span>
           </div>
 
-          <p className="mb-4 text-sm text-zinc-300">
+          <p className="mb-4 text-sm leading-6 text-zinc-300">
             Unlock AI workflows, saved projects, premium SEO tools and advanced
             productivity features.
           </p>

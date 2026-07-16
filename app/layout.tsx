@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 
-import Navbar from "@/components/layout/navbar";
-import Footer from "@/components/sections/Footer";
 import SearchProvider from "@/components/search/SearchProvider";
 
 import "./globals.css";
@@ -20,22 +18,17 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://toolnovaai.com"),
+  metadataBase: new URL("https://toolnovaai.vercel.app"),
   title: {
     default: "ToolNovaAI",
     template: "%s | ToolNovaAI",
   },
   description:
-    "Free AI, SEO, Developer, Image, PDF and Productivity tools built for speed and simplicity.",
+    "Premium AI Workspace for SEO, GEO, AEO, Developers and Content Creators.",
   keywords: [
-    "AI Tools",
-    "SEO Tools",
-    "Free Online Tools",
-    "AI Content Detector",
-    "AI Humanizer",
-    "Developer Tools",
-    "PDF Tools",
-    "Image Tools",
+    "AI Workspace",
+    "SEO Workspace",
+    "Developer Workspace",
     "ToolNovaAI",
   ],
   authors: [{ name: "ToolNovaAI" }],
@@ -53,16 +46,8 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
-      <body className="flex min-h-screen flex-col bg-[#050816] text-white">
-        <SearchProvider>
-          <Navbar />
-
-          <main className="flex-1">
-            {children}
-          </main>
-
-          <Footer />
-        </SearchProvider>
+      <body className="bg-[#050816] text-white">
+        <SearchProvider>{children}</SearchProvider>
       </body>
     </html>
   );
