@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/sections/Footer";
+import SearchProvider from "@/components/search/SearchProvider";
 
 import "./globals.css";
 
@@ -53,13 +54,15 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="flex min-h-screen flex-col bg-[#050816] text-white">
-        <Navbar />
+        <SearchProvider>
+          <Navbar />
 
-        <main className="flex-1">
-          {children}
-        </main>
+          <main className="flex-1">
+            {children}
+          </main>
 
-        <Footer />
+          <Footer />
+        </SearchProvider>
       </body>
     </html>
   );

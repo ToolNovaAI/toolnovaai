@@ -1,66 +1,45 @@
 "use client";
 
-import { Bell, Command, Search, Settings } from "lucide-react";
+import { Bell, Plus, User } from "lucide-react";
+
+import SearchTrigger from "@/components/search/SearchTrigger";
+import { useSearchModal } from "@/components/search/SearchProvider";
 
 export default function Topbar() {
+  const { open } = useSearchModal();
+
   return (
-    <div className="flex h-20 items-center justify-between px-8">
-      {/* Left */}
-      <div className="flex flex-1 items-center">
-        <div className="relative w-full max-w-xl">
-          <Search
-            size={18}
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500"
-          />
-
-          <input
-            type="text"
-            placeholder="Search tools, workspaces or commands..."
-            className="h-12 w-full rounded-2xl border border-white/10 bg-[#0B1220] pl-11 pr-28 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-cyan-500"
-          />
-
-          <div className="absolute right-3 top-1/2 flex -translate-y-1/2 items-center gap-1 rounded-lg border border-white/10 bg-white/5 px-2 py-1 text-xs text-zinc-400">
-            <Command size={12} />
-            K
-          </div>
-        </div>
+    <div className="flex h-20 items-center justify-between gap-6 px-8">
+      {/* Search */}
+      <div className="flex-1">
+        <SearchTrigger onClick={open} />
       </div>
 
-      {/* Right */}
-      <div className="ml-8 flex items-center gap-4">
-        {/* Quick Action */}
-        <button className="rounded-xl border border-white/10 bg-[#0B1220] p-3 transition hover:border-cyan-500 hover:bg-cyan-500/10">
-          <Settings
-            size={18}
-            className="text-zinc-300"
-          />
+      {/* Right Actions */}
+      <div className="flex items-center gap-3">
+        {/* Notifications */}
+        <button
+          type="button"
+          className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[#0B1220] transition hover:border-cyan-500/40"
+        >
+          <Bell size={20} className="text-zinc-400" />
         </button>
 
-        {/* Notification */}
-        <button className="relative rounded-xl border border-white/10 bg-[#0B1220] p-3 transition hover:border-cyan-500 hover:bg-cyan-500/10">
-          <Bell
-            size={18}
-            className="text-zinc-300"
-          />
-
-          <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-cyan-400" />
+        {/* New */}
+        <button
+          type="button"
+          className="flex items-center gap-2 rounded-2xl bg-cyan-500 px-5 py-3 font-semibold text-black transition hover:bg-cyan-400"
+        >
+          <Plus size={18} />
+          <span>New</span>
         </button>
 
         {/* Profile */}
-        <button className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#0B1220] px-3 py-2 transition hover:border-cyan-500">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500 font-bold text-black">
-            G
-          </div>
-
-          <div className="hidden text-left lg:block">
-            <p className="text-sm font-semibold text-white">
-              Grey
-            </p>
-
-            <p className="text-xs text-zinc-400">
-              Workspace Owner
-            </p>
-          </div>
+        <button
+          type="button"
+          className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 font-semibold text-white"
+        >
+          <User size={18} />
         </button>
       </div>
     </div>
