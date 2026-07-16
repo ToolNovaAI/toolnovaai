@@ -17,7 +17,7 @@ const tools = [
   {
     title: "AI Writer",
     description: "Generate blogs, articles and long-form content.",
-    href: "/tools/ai-writer",
+    href: "/workspace/ai/writer",
     icon: FileText,
     color: "text-cyan-400",
     bg: "bg-cyan-500/10",

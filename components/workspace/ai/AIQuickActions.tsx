@@ -15,7 +15,7 @@ const actions = [
   {
     title: "AI Writer",
     description: "Generate articles, blogs & emails",
-    href: "/tools/ai-writer",
+    href: "/workspace/ai/writer",
     icon: FileText,
     color: "text-cyan-400",
     bg: "bg-cyan-500/10",
